@@ -17,7 +17,7 @@ const article = ({ post }) => {
             <Heading fontSize="2xl" mt="1rem">{post.title}</Heading>
             <Text mt="1.5rem">{post.content}</Text>
             <Stack spacing={4} direction='row' align="end">
-                <Link href="/">
+                <Link href="/" passHref>
                     <Button colorScheme='red' size='lg' mt="3rem">Go Back</Button>
                 </Link>
                 <a href={post.url} target="_blank" rel="noopener noreferrer">

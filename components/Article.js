@@ -6,7 +6,7 @@ const ArticleItem = ({ post }) => {
     return (
         <LinkBox as='article' height="14rem" maxW="xl" p='5' borderWidth='1px' rounded='md' mt="4" className={articleStyles.card}>
         <Heading size='md' my='2'>
-            <Link href='/article/[id]' as={`/article/${post.id}`}>
+            <Link href='/article/[id]' as={`/article/${post.id}`} passHref>
                 <LinkOverlay noOfLines={[1,2,3]} > {post.title} &rarr; </LinkOverlay>
             </Link>
         </Heading>
