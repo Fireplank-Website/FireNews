@@ -20,14 +20,12 @@ export default function Home(props) {
 
 
 export async function getServerSideProps(context) {
-    console.log(articles[0]);
-
     // check if its time to update news
     if (new Date().getTime()/1000-3600 > articles[0]) {
         console.log("Updating news!");
         // update news
         articles[0] = new Date().getTime()/1000;
-        const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
+        const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${apiKey}`);
         const data = await res.json();
         for (let index = 1; index < data.articles.length; index++) {
             if (index >= articles.length) {
