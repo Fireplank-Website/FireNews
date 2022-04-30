@@ -24,13 +24,13 @@ const ArticleItem = ({ post }) => {
     }
 
     return (
-        <LinkBox as='article' height="14rem" maxW="xl" p='5' borderWidth='1px' rounded='md' mt="4" className={articleStyles.card}>
+        <LinkBox as='article' height="15.2rem" maxW="xl" p='5' borderWidth='1px' rounded='md' mt="4" className={articleStyles.card}>
             <Box as='time' dateTime={postTime}>
                 {relatime(postTime - new Date())}
             </Box>
             <Heading size='md' my='2'>
                 <Link href='/article/[id]' as={`/article/${post.id}`} passHref>
-                    <LinkOverlay noOfLines={[1,2,3]} > {post.title} &rarr; </LinkOverlay>
+                    <LinkOverlay noOfLines={[1,2]} > {post.title} &rarr; </LinkOverlay>
                 </Link>
             </Heading>
             <Text noOfLines={[1,2,3,4]}>{post.description}</Text>
